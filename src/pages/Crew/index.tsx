@@ -2,9 +2,13 @@ import { Header } from "@components/Header";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import background from "../../assets/crew/background-crew-desktop.jpg";
-import imgDouglas from "../../assets/crew/image-douglas-hurley.png";
+import { useState } from "react";
+import { FlightCrew } from "../../utils/crew";
 
 const Crew = () => {
+  const [selected, setSelected] = useState(Number);
+  console.log(selected);
+
   return (
     <motion.div
       initial={{ opacity: 0.8 }}
@@ -17,28 +21,38 @@ const Crew = () => {
           <strong>02</strong> meet your crew
         </YourCrew>
 
-        <AboutUs>
-          <div>
-            <About>
-              <li>Comander</li>
-              <li>
-                <MyName>Douglas Hurley</MyName>
-              </li>
-              <li className="description">
-                Douglas Gerald Hurley is an American engineer, former Marine
-                Corps pilot and former NASA astronaut. He launched into space
-                for the third time as commander of Crew Dragon Demo-2.
-              </li>
-              <li>
-                <Buttons></Buttons>
-                <Buttons></Buttons>
-                <Buttons></Buttons>
-                <Buttons></Buttons>
-              </li>
-            </About>
-          </div>
-          <MyPhoto src={imgDouglas} alt="Commander Douglas Hurley" />
-        </AboutUs>
+        {FlightCrew.map((e, index) => {
+          return (
+            index === selected && (
+              <>
+                <motion.div
+                  initial={{ opacity: 0.5 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                >
+                  <AboutUs>
+                    <div>
+                      <About>
+                        <li>{e.position}</li>
+                        <li>
+                          <MyName>{e.name}</MyName>
+                        </li>
+                        <li className="description">{e.about}</li>
+                        <li>
+                          <Buttons onClick={() => setSelected(0)}></Buttons>
+                          <Buttons onClick={() => setSelected(1)}></Buttons>
+                          <Buttons onClick={() => setSelected(2)}></Buttons>
+                          <Buttons onClick={() => setSelected(3)}></Buttons>
+                        </li>
+                      </About>
+                    </div>
+                    <MyPhoto src={e.img} alt={e.name + e.position} />
+                  </AboutUs>
+                </motion.div>
+              </>
+            )
+          );
+        })}
       </CrewMain>
     </motion.div>
   );
@@ -81,7 +95,7 @@ const About = styled.ul`
   display: flex;
   flex-direction: column;
   width: 500px;
-  gap: 24px;
+  gap: 10px;
   position: relative;
 
   li {
@@ -101,7 +115,7 @@ const About = styled.ul`
     color: #d0d6f9;
   }
 
-  li:last-child{
+  li:last-child {
     position: absolute;
     bottom: -100px;
   }
@@ -117,20 +131,20 @@ const Buttons = styled.button`
   border: none;
   border-radius: 50%;
   margin-right: 20px;
-  padding: 5px;
+  padding: 7px;
   background-color: gray;
 
-  &:hover{
+  &:hover {
     background-color: rgb(185, 182, 182);
   }
 
-  &:active{
+  &:active {
     background-color: #fff;
   }
 `;
 
 const MyPhoto = styled.img`
-    width: 300px;
+  width: 300px;
   -webkit-mask-image: linear-gradient(
     to bottom,
     #000,

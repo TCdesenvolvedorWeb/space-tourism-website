@@ -1,55 +1,64 @@
 import { Header } from "@components/Header";
 import background from "../../assets/destination/background-destination-desktop.jpg";
 import styled from "styled-components";
-import moon from "../../assets/destination/image-moon.png";
 import { motion } from "framer-motion";
+import { SatelliteInfos } from "../../utils/Satellites";
+import { useState } from "react";
 
 const Destination = () => {
+  const [selected, setSelected] = useState(Number);
+
   return (
     <>
       <motion.div
-        initial={{  opacity: 0.8 }}
-        animate={{  opacity: 1 }}
-        transition={{ duration: 0.5 , ease: 'easeInOut'}}
+        initial={{ opacity: 0.8 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
       >
-      <Header />
+        <Header />
         <Hero>
           <PickDestination>
             <strong>01</strong> PICK YOUR DESTINATION
           </PickDestination>
           <Sections>
-            <Satellite src={moon} alt="Moon" />
+            {SatelliteInfos.map((e, index) => {
+              return (
+                index === selected && (
+                  <>
+                    <motion.div
+                      initial={{ opacity: 0.5 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 1, ease: "easeInOut" }}
+                    >
+                      <Satellite src={e.img} alt="Moon" />
+                    </motion.div>
 
-            <Info>
-              <SatelliteList>
-                <li>MOON</li>
-                <li>MARS</li>
-                <li>EUROPA</li>
-                <li>TITAN</li>
-              </SatelliteList>
+                    <Info>
+                      <SatelliteList>
+                        <li onClick={() => setSelected(0)}>MOON</li>
+                        <li onClick={() => setSelected(1)}>MARS</li>
+                        <li onClick={() => setSelected(2)}>EUROPA</li>
+                        <li onClick={() => setSelected(3)}>TITAN</li>
+                      </SatelliteList>
 
-              <Name> Moon </Name>
-
-              <p>
-                See our planet as you’ve never seen it before. A perfect
-                relaxing trip away to help regain perspective and come back
-                refreshed. While you’re there, take in some history by visiting
-                the Luna 2 and Apollo 11 landing sites.
-              </p>
-
-              <hr />
-
-              <Footer>
-                <div>
-                  <p>avg. distance</p>
-                  <p className="distance">384,400 KM</p>
-                </div>
-                <div>
-                  <p>est. travel time</p>
-                  <p className="distance">3 DAYS</p>
-                </div>
-              </Footer>
-            </Info>
+                      <Name> {e.name} </Name>
+                      <p>{e.description}</p>
+                      <hr />
+                      <Footer>
+                        <div>
+                          <p>avg. distance</p>
+                          <p className="distance">{e.avg}</p>
+                        </div>
+                        <div>
+                          <p>est. travel time</p>
+                          <p className="distance">{e.est}</p>
+                        </div>
+                      </Footer>
+                    </Info>
+                  </>
+                )
+              );
+            })}
           </Sections>
         </Hero>
       </motion.div>
@@ -114,18 +123,25 @@ const SatelliteList = styled.ul`
   font-family: "Barlow", sans serif;
   font-size: 1.4rem;
 
+  li:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    border: none;
+    bottom: -8px;
+    height: 2px;
+    width: 100%;
+    transition: 0.5s ease-in-out;
+    border-bottom: solid 2px transparent;
+  }
+
   li:hover {
     color: #fff;
     position: relative;
+    cursor: pointer;
 
     &:after {
-      position: absolute;
-      content: "";
-      left: 0;
-      bottom: -8px;
       border-bottom: solid 2px gray;
-      width: 100%;
-      height: 1px;
     }
   }
 `;

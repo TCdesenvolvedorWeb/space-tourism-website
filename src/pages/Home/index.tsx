@@ -1,6 +1,7 @@
 import { Header } from "@components/Header";
 import { Explore, Hero, Info, Main } from "./style";
 import { motion } from "framer-motion";
+import { Link } from "react-router";
 
 const Home = () => {
   return (
@@ -24,7 +25,7 @@ const Home = () => {
                 of this world experience!
               </p>
             </Info>
-            <Explore>EXPLORE</Explore>
+            <Link to={"/destination"}><Explore>EXPLORE</Explore></Link>
           </Hero>
         </Main>
       </motion.div>

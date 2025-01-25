@@ -1,4 +1,3 @@
-import { Home } from "src/pages/Home";
 import {
   Route,
   Routes,
@@ -6,10 +5,11 @@ import {
   HashRouter,
   useLocation,
 } from "react-router";
-import { Destination } from "src/pages/Destination";
 import { AnimatePresence } from "framer-motion";
-import { Crew } from "src/pages/Crew";
-import { Technology } from "src/pages/Technology";
+import { Home } from "../pages/Home";
+import { Destination } from "../pages/Destination";
+import { Crew } from "../pages/Crew";
+import { Technology } from "../pages/Technology";
 
 const SupportHistory = (): boolean => {
   return !!(window.history && window.history.pushState);

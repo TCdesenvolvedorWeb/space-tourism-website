@@ -5,10 +5,8 @@ import background from "@assets/crew/background-crew-desktop.jpg";
 import { useState } from "react";
 import { FlightCrew } from "@utils/crew";
 
-
-const Crew = () => {
+const Crew = ( {background = "#fff"}) => {
   const [selected, setSelected] = useState(Number);
-  console.log(selected);
 
   return (
     <motion.div
@@ -40,10 +38,22 @@ const Crew = () => {
                         </li>
                         <li className="description">{e.about}</li>
                         <li>
-                          <Buttons onClick={() => setSelected(0)}></Buttons>
-                          <Buttons onClick={() => setSelected(1)}></Buttons>
-                          <Buttons onClick={() => setSelected(2)}></Buttons>
-                          <Buttons onClick={() => setSelected(3)}></Buttons>
+                          <Buttons 
+                            onClick={() => setSelected(0)}
+                            style={ selected === 0 ? { backgroundColor: background } : undefined }>
+                          </Buttons>
+                          <Buttons 
+                            onClick={() => setSelected(1)}
+                            style={ selected === 1 ? { backgroundColor: background } : undefined }>
+                          </Buttons>
+                          <Buttons 
+                            onClick={() => setSelected(2)}
+                            style={ selected === 2 ? { backgroundColor: background } : undefined }>
+                          </Buttons>
+                          <Buttons
+                            onClick={() => setSelected(3)}
+                            style={ selected === 3 ? { backgroundColor: background } : undefined }>
+                          </Buttons>
                         </li>
                       </About>
                     </div>

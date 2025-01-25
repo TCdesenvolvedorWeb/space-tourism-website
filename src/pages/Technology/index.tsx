@@ -5,8 +5,8 @@ import { Header } from "@components/Header";
 import { Launches } from "@utils/Technology";
 import { useState } from "react";
 
-const Technology = () => {
-  const [ selected , setSelected ] = useState(Number);
+const Technology = ({ background = "#fff", color = "#000" }) => {
+  const [selected, setSelected] = useState(Number);
 
   return (
     <motion.div
@@ -21,9 +21,37 @@ const Technology = () => {
         </SpaceLaunch>
         <Sections>
           <Numbers>
-            <li onClick={() => setSelected(0)}>1</li>
-            <li onClick={() => setSelected(1)}>2</li>
-            <li onClick={() => setSelected(2)}>3</li>
+            <li
+              onClick={() => setSelected(0)}
+              style={
+                selected === 0
+                  ? { backgroundColor: background, color: color }
+                  : undefined
+              }
+            >
+              1
+            </li>
+
+            <li
+              onClick={() => setSelected(1)}
+              style={
+                selected === 1
+                  ? { backgroundColor: background, color: color }
+                  : undefined
+              }
+            >
+              2
+            </li>
+            <li
+              onClick={() => setSelected(2)}
+              style={
+                selected === 2
+                  ? { backgroundColor: background, color: color }
+                  : undefined
+              }
+            >
+              3
+            </li>
           </Numbers>
           {Launches.map((e, index) => {
             return (
@@ -34,9 +62,7 @@ const Technology = () => {
                     <li>
                       <h1>{e.name}</h1>
                     </li>
-                    <li>
-                      {e.description}
-                    </li>
+                    <li>{e.description}</li>
                   </ul>
                   <Launtch src={e.img} alt=" Launch Vehicle" />
                 </>
@@ -97,12 +123,14 @@ const Sections = styled.section`
       width: 450px;
       font-size: 1.7rem;
       font-family: "Barlow", sans serif;
+      color: #d0d6f9;
 
       h1 {
         font-family: "Bellefair", sans serif;
         font-size: 5rem;
         font-weight: 400;
         text-transform: uppercase;
+        color: #fff;
       }
     }
 

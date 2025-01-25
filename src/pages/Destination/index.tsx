@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { SatelliteInfos } from "@utils/Satellites";
 import { useState } from "react";
 
-const Destination = () => {
+const Destination = ({ color = "#fff" }) => {
   const [selected, setSelected] = useState(Number);
 
   return (
@@ -35,10 +35,34 @@ const Destination = () => {
 
                     <Info>
                       <SatelliteList>
-                        <li onClick={() => setSelected(0)}>MOON</li>
-                        <li onClick={() => setSelected(1)}>MARS</li>
-                        <li onClick={() => setSelected(2)}>EUROPA</li>
-                        <li onClick={() => setSelected(3)}>TITAN</li>
+                        <li
+                          onClick={() => setSelected(0)}
+                          style={selected === 0 ? { color: color } : undefined}
+                          className={selected === 0 ? "active" : ""}
+                        >
+                          MOON
+                        </li>
+                        <li
+                          onClick={() => setSelected(1)}
+                          style={selected === 1 ? { color: color } : undefined}
+                          className={selected === 1 ? "active" : ""}
+                        >
+                          MARS
+                        </li>
+                        <li
+                          onClick={() => setSelected(2)}
+                          style={selected === 2 ? { color: color } : undefined}
+                          className={selected === 2 ? "active" : ""}
+                        >
+                          EUROPA
+                        </li>
+                        <li
+                          onClick={() => setSelected(3)}
+                          style={selected === 3 ? { color: color } : undefined}
+                          className={selected === 3 ? "active" : ""}
+                        >
+                          TITAN
+                        </li>
                       </SatelliteList>
 
                       <Name> {e.name} </Name>
@@ -142,6 +166,20 @@ const SatelliteList = styled.ul`
 
     &:after {
       border-bottom: solid 2px gray;
+    }
+  }
+
+  li.active {
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      height: 2px;
+      width: 100%;
+      border-bottom: solid 2px #fff;
     }
   }
 `;

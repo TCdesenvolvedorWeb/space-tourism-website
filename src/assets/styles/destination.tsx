@@ -3,8 +3,8 @@ import background from "@assets/destination/background-destination-desktop.jpg";
 
 const Hero = styled.main`
   background-image: url(${background});
-  background-size: 100%;
-  height: 100vh;
+  background-size: cover;
+  height: 620px;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -14,8 +14,8 @@ const Hero = styled.main`
 `;
 
 const PickDestination = styled.p`
-  text-align: left;
-  width: 70vw;
+  align-self: flex-start;
+  margin-left: 187px;
   font-size: 1.7rem;
   font-family: "Barlow", sans serif;
   letter-spacing: 3px;
@@ -28,7 +28,6 @@ const PickDestination = styled.p`
 const Sections = styled.section`
   display: flex;
   align-items: center;
-  width: 70vw;
   height: 480px;
   gap: 20px;
 

@@ -3,7 +3,7 @@ import { Header } from "@components/Header";
 import { Launches } from "@utils/Technology";
 import { useState } from "react";
 import { Sections } from "@assets/styles/destination";
-import { TechnologyMain, SpaceLaunch, Numbers, Launtch } from "@assets/styles/technology";
+import { TechnologyMain, SpaceLaunch, Numbers, Launtch , LauntchInfo} from "@assets/styles/technology";
 
 const Technology = ({ background = "#fff", color = "#000" }) => {
   const [selected, setSelected] = useState(Number);
@@ -57,13 +57,13 @@ const Technology = ({ background = "#fff", color = "#000" }) => {
             return (
               index === selected && (
                 <>
-                  <ul>
+                  <LauntchInfo>
                     <li>The terminology...</li>
                     <li>
                       <h1>{e.name}</h1>
                     </li>
                     <li>{e.description}</li>
-                  </ul>
+                  </LauntchInfo>
                   <Launtch src={e.img} alt=" Launch Vehicle" />
                 </>
               )

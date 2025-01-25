@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const HeaderPage = styled.header`
     position: absolute;
-    width: 100vw;
+    min-width: 1364px;
+    max-width: 1440px;
     height: 100px;
     display: flex;
     justify-content: space-between;

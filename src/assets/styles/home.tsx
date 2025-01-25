@@ -4,7 +4,7 @@ import background from "@assets/home/background-home-desktop.jpg";
 const Main = styled.main`
   background-image: url(${background});
   background-size: cover;
-  height: 100vh;
+  height: 633px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +14,7 @@ const Main = styled.main`
 `;
 
 const Hero = styled.article`
-  width: 70vw;
+  max-width: 1000px;
   height: 400px;
   display: flex;
   align-items: center;
@@ -29,6 +29,7 @@ const Info = styled.div`
   p {
     color: #d0d6f9;
     font-family: "Barlow" , sans serif;
+    width: 400px;
   }
 
   h1 {

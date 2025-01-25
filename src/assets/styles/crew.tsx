@@ -2,8 +2,7 @@ import styled from "styled-components";
 import background from "@assets/crew/background-crew-desktop.jpg";
 
 const CrewMain = styled.main`
-  width: 100vw;
-  min-height: 100vh;
+  height: 620px;
   background-image: url(${background});
   background-size: cover;
   color: #fff;
@@ -15,7 +14,8 @@ const CrewMain = styled.main`
 
 const YourCrew = styled.h2`
   text-align: left;
-  width: 70vw;
+  align-self: flex-start;
+  margin-left: 187px;
   font-size: 2rem;
   font-family: "Barlow", sans serif;
   text-transform: uppercase;
@@ -31,7 +31,6 @@ const YourCrew = styled.h2`
 const AboutUs = styled.section`
   display: flex;
   align-items: center;
-  width: 70vw;
   gap: 32px;
 `;
 const About = styled.ul`

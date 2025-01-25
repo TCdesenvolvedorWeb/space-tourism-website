@@ -6,10 +6,10 @@ import {
   useLocation,
 } from "react-router";
 import { AnimatePresence } from "framer-motion";
-import { Home } from "../pages/Home";
-import { Destination } from "../pages/Destination";
-import { Crew } from "../pages/Crew";
-import { Technology } from "../pages/Technology";
+import { Home } from "@pages/Home";
+import { Destination } from "@pages/Destination";
+import { Crew } from "@pages/Crew";
+import { Technology } from "@pages/Technology";
 
 const SupportHistory = (): boolean => {
   return !!(window.history && window.history.pushState);

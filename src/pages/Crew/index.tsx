@@ -1,9 +1,10 @@
 import { Header } from "@components/Header";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import background from "../../assets/crew/background-crew-desktop.jpg";
+import background from "@assets/crew/background-crew-desktop.jpg";
 import { useState } from "react";
-import { FlightCrew } from "../../utils/crew";
+import { FlightCrew } from "@utils/crew";
+
 
 const Crew = () => {
   const [selected, setSelected] = useState(Number);

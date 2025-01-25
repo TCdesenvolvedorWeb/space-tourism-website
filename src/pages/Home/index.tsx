@@ -9,8 +9,7 @@ const Home = () => {
       <motion.div
         initial={{  opacity: 0.9 }}
         animate={{  opacity: 1 }}
-        transition={{ duration: 0.5, ease: 'easeInOut'}}
-        
+        transition={{ duration: 0.5, ease: 'easeInOut'}}      
       >
         <Header />
         <Main>

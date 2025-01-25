@@ -1,8 +1,8 @@
 import { Header } from "@components/Header";
-import background from "../../assets/destination/background-destination-desktop.jpg";
+import background from "@assets/destination/background-destination-desktop.jpg";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { SatelliteInfos } from "../../utils/Satellites";
+import { SatelliteInfos } from "@utils/Satellites";
 import { useState } from "react";
 
 const Destination = () => {

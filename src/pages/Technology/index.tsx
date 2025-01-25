@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import background from "../../assets/technology/background-technology-desktop.jpg";
+import background from "@assets/technology/background-technology-desktop.jpg";
 import styled from "styled-components";
 import { Header } from "@components/Header";
-import { Launches } from "../../utils/Technology"
+import { Launches } from "@utils/Technology";
 import { useState } from "react";
 
 const Technology = () => {

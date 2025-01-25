@@ -75,6 +75,7 @@ const Buttons = styled.button`
   margin-right: 20px;
   padding: 7px;
   background-color: gray;
+  cursor: pointer;
 
   &:hover {
     background-color: rgb(185, 182, 182);

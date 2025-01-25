@@ -14,7 +14,7 @@ const Main = styled.main`
 `;
 
 const Hero = styled.article`
-  max-width: 1000px;
+  width: 1000px;
   height: 400px;
   display: flex;
   align-items: center;

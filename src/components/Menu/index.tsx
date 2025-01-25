@@ -3,7 +3,6 @@ import { LinkStyled, MenuHamburguer, Options } from "@assets/styles/menu";
 
 const Menu = () => {
   const [ selected, setSelected ] = useState<number>();
-  console.log(selected);
 
   useEffect(() => {
     const storedValue = localStorage.getItem('selected');

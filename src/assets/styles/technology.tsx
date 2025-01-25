@@ -48,6 +48,7 @@ const Numbers = styled.ol`
     border-radius: 50%;
     font-size: 2rem;
     transition: 0.5s ease-in-out;
+    cursor: pointer;
   }
 
   li:hover {

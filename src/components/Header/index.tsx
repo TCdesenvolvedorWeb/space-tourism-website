@@ -1,5 +1,5 @@
 import { Menu } from "@components/Menu";
-import { ContainerLogo, HeaderPage } from "./style";
+import { ContainerLogo, HeaderPage } from "../../assets/styles/header";
 
 const Header = () => {
   return (

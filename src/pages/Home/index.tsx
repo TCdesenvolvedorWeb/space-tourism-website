@@ -1,5 +1,5 @@
 import { Header } from "@components/Header";
-import { Explore, Hero, Info, Main } from "./style";
+import { Explore, Hero, Info, Main } from "../../assets/styles/home";
 import { motion } from "framer-motion";
 import { Link } from "react-router";
 
@@ -24,7 +24,9 @@ const Home = () => {
                 of this world experience!
               </p>
             </Info>
-            <Link to={"/destination"}><Explore>EXPLORE</Explore></Link>
+            <Link to={"/destination"}>
+              <Explore>EXPLORE</Explore>
+            </Link>
           </Hero>
         </Main>
       </motion.div>

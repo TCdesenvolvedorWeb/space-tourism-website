@@ -10,10 +10,13 @@ const CrewMain = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 875px) {
+    min-height: 100vh;
+  }
 `;
 
 const YourCrew = styled.h2`
-  text-align: left;
   align-self: flex-start;
   margin-left: 187px;
   font-size: 2rem;
@@ -26,12 +29,23 @@ const YourCrew = styled.h2`
   strong {
     color: gray;
   }
+
+  @media (max-width: 875px) {
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
 `;
 
 const AboutUs = styled.section`
   display: flex;
   align-items: center;
   gap: 32px;
+
+  @media (max-width: 875px) {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 const About = styled.ul`
   display: flex;
@@ -60,6 +74,13 @@ const About = styled.ul`
   li:last-child {
     position: absolute;
     bottom: -100px;
+  }
+
+  @media (max-width: 875px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `;
 

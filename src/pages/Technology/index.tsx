@@ -2,8 +2,7 @@ import { motion } from "framer-motion";
 import { Header } from "@components/Header";
 import { Launches } from "@utils/Technology";
 import { useState } from "react";
-import { Sections } from "@assets/styles/destination";
-import { TechnologyMain, SpaceLaunch, Numbers, Launtch , LauntchInfo} from "@assets/styles/technology";
+import { TechnologyMain, SpaceLaunch, Numbers, Launtch , LauntchInfo , Sections} from "@assets/styles/technology";
 
 const Technology = ({ background = "#fff", color = "#000" }) => {
   const [selected, setSelected] = useState(Number);

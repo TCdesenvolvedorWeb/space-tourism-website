@@ -11,6 +11,10 @@ const Main = styled.main`
   font-size: 1.5rem;
   font-style: normal;
   transition: 1s ease-in-out;
+
+  @media (max-width: 875px) {
+    min-height: 100vh;
+  }
 `;
 
 const Hero = styled.article`
@@ -21,6 +25,13 @@ const Hero = styled.article`
   justify-content: space-between;
   position: relative;
   margin-top: 150px;
+
+  @media (max-width: 875px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+  }
 `;
 
 const Info = styled.div`
@@ -28,7 +39,7 @@ const Info = styled.div`
 
   p {
     color: #d0d6f9;
-    font-family: "Barlow" , sans serif;
+    font-family: "Barlow", sans serif;
     width: 400px;
   }
 
@@ -39,8 +50,16 @@ const Info = styled.div`
     font-weight: 400;
   }
 
-  .info{
+  .info {
     font-size: 1.3rem;
+  }
+
+  @media (max-width: 875px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 `;
 
@@ -77,4 +96,4 @@ const Explore = styled.button`
   }
 `;
 
-export { Explore , Hero , Info , Main }
+export { Explore, Hero, Info, Main };

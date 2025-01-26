@@ -11,6 +11,12 @@ const Hero = styled.main`
   justify-content: flex-end;
   align-items: center;
   transition: 1s ease-in-out;
+
+  @media (max-width: 875px) {
+    min-height: 100vh;
+    justify-content: center;
+    gap: 150px;
+  }
 `;
 
 const PickDestination = styled.p`
@@ -23,6 +29,9 @@ const PickDestination = styled.p`
   strong {
     color: gray;
   }
+
+  @media (max-width: 875px) {
+  }
 `;
 
 const Sections = styled.section`
@@ -34,10 +43,22 @@ const Sections = styled.section`
   hr {
     border: solid 1px gray;
   }
+
+  @media (max-width: 875px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const Satellite = styled.img`
   width: 350px;
+
+   @media (max-width: 875px) {
+    width: 250px;
+  }
 `;
 
 const Info = styled.article`
@@ -48,6 +69,11 @@ const Info = styled.article`
   width: 400px;
   font-size: 1.7rem;
   color: #d0d6f9;
+
+  @media (max-width: 875px) {
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const SatelliteList = styled.ul`
@@ -115,4 +141,13 @@ const Footer = styled.footer`
   }
 `;
 
-export { Hero , PickDestination , Sections , Satellite , Info , SatelliteList , Name , Footer }
+export {
+  Hero,
+  PickDestination,
+  Sections,
+  Satellite,
+  Info,
+  SatelliteList,
+  Name,
+  Footer,
+};

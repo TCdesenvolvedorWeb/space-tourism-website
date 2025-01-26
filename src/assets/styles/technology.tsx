@@ -11,6 +11,11 @@ const TechnologyMain = styled.main`
   align-items: center;
   flex-direction: column;
   padding: 0 50px;
+
+  @media (max-width: 875px) {
+    min-height: 100vh;
+    gap: 150px;
+  }
 `;
 
 const SpaceLaunch = styled.h2`
@@ -25,14 +30,24 @@ const SpaceLaunch = styled.h2`
   strong {
     color: gray;
   }
+
+  @media (max-width: 875px) {
+    margin: auto;
+  }
 `;
 
 const Sections = styled.section`
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 50px;
   width: 800px;
   height: 500px;
+
+  @media (max-width: 875px) {
+    flex-direction: column-reverse;
+    position: relative;
+  }
 `;
 
 const Numbers = styled.ol`
@@ -42,7 +57,7 @@ const Numbers = styled.ol`
   gap: 30px;
 
   li {
-    padding: 20px 10px;
+    padding: 20px 30px;
     text-align: center;
     border: solid 1px gray;
     border-radius: 50%;
@@ -54,6 +69,17 @@ const Numbers = styled.ol`
   li:hover {
     background-color: #fff;
     color: #000;
+  }
+
+  @media (max-width: 875px) {
+    flex-direction: row;
+    position: absolute;
+    top: -220px;
+    left: 33%;
+
+    li {
+      padding: 20px 30px;
+    }
   }
 `;
 
@@ -92,4 +118,4 @@ const Launtch = styled.img`
   width: 400px;
 `;
 
-export { TechnologyMain, SpaceLaunch, Sections, Numbers, Launtch , LauntchInfo };
+export { TechnologyMain, SpaceLaunch, Sections, Numbers, Launtch, LauntchInfo };

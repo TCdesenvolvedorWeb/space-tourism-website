@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { LinkStyled, MenuHamburguer, Options } from "@assets/styles/menu";
+import { LinkStyled, MenuHamburguer, Navegation, Options } from "@assets/styles/menu";
 
 const Menu = () => {
   const [ selected, setSelected ] = useState<number>();
@@ -18,7 +18,14 @@ const Menu = () => {
   
   return (
     <>
-      <nav>
+      <Navegation>
+        <input type="checkbox" name="" id="menu-hamburguer" />
+        <label htmlFor="menu-hamburguer" >
+          <div className="menu">
+            <span className="hamburguer"></span>
+          </div>
+        </label>
+
         <MenuHamburguer>
           <Options 
             onClick={() => handleOptionsClick(0)} 
@@ -41,7 +48,7 @@ const Menu = () => {
             <LinkStyled to={"/technology"}>03 TECHNOLOGY</LinkStyled>
           </Options>
         </MenuHamburguer>
-      </nav>
+      </Navegation>
     </>
   );
 };

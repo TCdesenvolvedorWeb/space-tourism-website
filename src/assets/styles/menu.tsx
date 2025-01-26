@@ -1,6 +1,102 @@
 import styled from "styled-components";
 import { Link } from "react-router";
 
+const Navegation = styled.nav`
+  input {
+    display: none;
+  }
+
+  label {
+    display: none;
+  }
+
+  .hamburguer{
+    width: 24px;
+    display: block;
+    position: relative;
+    height: 3px;
+    background-color: #fff;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
+
+  .hamburguer::before{
+    content: '';
+    width: 100%;
+    height: 100%;  
+    background-color: #fff;
+    position: absolute;
+    top: -10px;
+  }
+
+  .hamburguer::after{
+    content: '';
+    width: 100%;
+    height: 100%;  
+    background-color: #fff;
+    position: absolute;
+    bottom: -10px;
+  }
+
+  @media (max-width: 812px) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+    label{
+      display: block;
+      position: absolute;
+      top: 40px;
+      right: 30px;
+      z-index: 1;
+    }
+
+    input:checked ~ label .hamburguer {
+      transform: rotate(45deg);
+    }
+
+    input:checked ~ label .hamburguer::before {
+      transform: rotate(90deg);
+      top: 0;
+    }
+
+    input:checked ~ label .hamburguer::after {
+      transform: rotate(90deg);
+      bottom: 0;
+    }
+
+    ul{
+      width: 400px;
+      min-height: 100vh;
+      display: none;
+      background: #0b0d17ee;
+      padding: 50px 30px;
+
+      li{
+        margin-bottom: 30px;
+      }
+
+      li:first-child{
+        margin-left: 0;
+      }
+
+      li:after{
+        display: none;
+      }
+    }
+
+    .menu{
+      display: block;
+      align-self: flex-end;
+    }
+
+    input:checked ~ ul{
+      display: block;
+    }
+  }
+`;
+
 const MenuHamburguer = styled.ul`
   display: flex;
   align-items: center;
@@ -23,7 +119,7 @@ const MenuHamburguer = styled.ul`
     margin-left: 187px;
   }
 
-  li.active{
+  li.active {
     position: relative;
 
     &:after {
@@ -58,4 +154,4 @@ const LinkStyled = styled(Link)`
   text-decoration: none;
 `;
 
-export { MenuHamburguer, Options, LinkStyled };
+export { MenuHamburguer, Options, LinkStyled, Navegation };

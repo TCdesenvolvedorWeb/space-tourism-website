@@ -8,7 +8,6 @@ const Menu = () => {
     const storedValue = localStorage.getItem('selected');
 
     if (storedValue) return setSelected(Number(storedValue));
-
   },[])
 
   const handleOptionsClick = (index: number) => {

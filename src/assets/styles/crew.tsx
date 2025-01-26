@@ -4,7 +4,7 @@ import backgroundTablet from "@assets/crew/background-crew-tablet.jpg";
 import backgroundMobile from "@assets/crew/background-crew-mobile.jpg";
 
 const CrewMain = styled.main`
-  height: 620px;
+  max-height: 630px;
   background-image: url(${backgroundDesktop});
   background-size: cover;
   color: #fff;
@@ -32,7 +32,6 @@ const YourCrew = styled.h2`
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 3px;
-  margin-top: 60px;
 
   strong {
     color: gray;
@@ -58,6 +57,7 @@ const AboutUs = styled.section`
   display: flex;
   align-items: center;
   gap: 32px;
+  margin-bottom: 130px;
 
   @media (max-width: 875px) {
     flex-direction: column;

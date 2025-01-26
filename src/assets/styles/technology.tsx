@@ -10,7 +10,7 @@ const TechnologyMain = styled.main`
   justify-content: end;
   align-items: center;
   flex-direction: column;
-  padding: 0 50px;
+  padding-bottom: 50px;
 
   @media (max-width: 1094px) {
     min-height: 1100px;
@@ -117,10 +117,6 @@ const LauntchInfo = styled.ul`
 
   @media (max-width: 1094px) {
     text-align: center;
-
-    li:last-child {
-      padding-bottom: 30px;
-    }
   }
 
   @media (max-width: 475px) {

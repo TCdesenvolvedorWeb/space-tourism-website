@@ -10,7 +10,7 @@ const Navegation = styled.nav`
     display: none;
   }
 
-  .hamburguer{
+  .hamburguer {
     width: 24px;
     display: block;
     position: relative;
@@ -20,19 +20,19 @@ const Navegation = styled.nav`
     cursor: pointer;
   }
 
-  .hamburguer::before{
-    content: '';
+  .hamburguer::before {
+    content: "";
     width: 100%;
-    height: 100%;  
+    height: 100%;
     background-color: #fff;
     position: absolute;
     top: -10px;
   }
 
-  .hamburguer::after{
-    content: '';
+  .hamburguer::after {
+    content: "";
     width: 100%;
-    height: 100%;  
+    height: 100%;
     background-color: #fff;
     position: absolute;
     bottom: -10px;
@@ -44,7 +44,7 @@ const Navegation = styled.nav`
     right: 0;
     z-index: 1;
 
-    label{
+    label {
       display: block;
       position: absolute;
       top: 40px;
@@ -66,32 +66,36 @@ const Navegation = styled.nav`
       bottom: 0;
     }
 
-    ul{
-      width: 400px;
+    ul {
+      width: 70vw;
       min-height: 100vh;
       display: none;
       background: #0b0d17ee;
       padding: 50px 30px;
 
-      li{
+      li {
         margin-bottom: 30px;
       }
 
-      li:first-child{
+      li:first-child {
         margin-left: 0;
       }
 
-      li:after{
+      li:after {
         display: none;
+      }
+
+      @media (max-width: 375px) {
+        min-height: 1050px;
       }
     }
 
-    .menu{
+    .menu {
       display: block;
       align-self: flex-end;
     }
 
-    input:checked ~ ul{
+    input:checked ~ ul {
       display: block;
     }
   }

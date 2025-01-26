@@ -1,9 +1,12 @@
 import styled from "styled-components";
-import background from "@assets/destination/background-destination-desktop.jpg";
+import backgroundDesktop from "@assets/destination/background-destination-desktop.jpg";
+import backgroundTablet from "@assets/destination/background-destination-tablet.jpg";
+import backgroundMobile from "@assets/destination/background-destination-mobile.jpg";
 
 const Hero = styled.main`
-  background-image: url(${background});
+  background-image: url(${backgroundDesktop});
   background-size: cover;
+  background-position: center;
   height: 620px;
   color: #fff;
   display: flex;
@@ -13,9 +16,19 @@ const Hero = styled.main`
   transition: 1s ease-in-out;
 
   @media (max-width: 875px) {
+    background-image: url(${backgroundTablet});
     min-height: 100vh;
     justify-content: center;
-    gap: 150px;
+    gap: 50px;
+  }
+
+  @media (max-width: 475px) {
+    background-image: url(${backgroundMobile});
+    gap: 10px;
+  }
+
+  @media (max-width: 375px) {
+    min-height: 1050px;
   }
 `;
 
@@ -30,14 +43,15 @@ const PickDestination = styled.p`
     color: gray;
   }
 
-  @media (max-width: 875px) {
+  @media (max-width: 475px) {
+    font-size: 1.3rem;
+    margin: auto;
   }
 `;
 
 const Sections = styled.section`
   display: flex;
   align-items: center;
-  height: 480px;
   gap: 20px;
 
   hr {
@@ -56,7 +70,7 @@ const Sections = styled.section`
 const Satellite = styled.img`
   width: 350px;
 
-   @media (max-width: 875px) {
+  @media (max-width: 875px) {
     width: 250px;
   }
 `;
@@ -70,9 +84,17 @@ const Info = styled.article`
   font-size: 1.7rem;
   color: #d0d6f9;
 
+  hr {
+    width: 100%;
+  }
+
   @media (max-width: 875px) {
     justify-content: center;
     align-items: center;
+  }
+
+  @media (max-width: 375px) {
+    width: 300px;
   }
 `;
 
@@ -138,6 +160,12 @@ const Footer = styled.footer`
     font-size: 2.5rem;
     color: #fff;
     font-family: "Bellefair", sans serif;
+  }
+
+  @media (max-width: 375px){
+    flex-direction: column;
+    gap: 30px;
+    padding-bottom: 30px;
   }
 `;
 

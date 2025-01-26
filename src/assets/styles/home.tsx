@@ -1,9 +1,12 @@
 import styled from "styled-components";
-import background from "@assets/home/background-home-desktop.jpg";
+import backgroundDesktop from "@assets/home/background-home-desktop.jpg";
+import backgroundTablet from "@assets/home/background-home-tablet.jpg";
+import backgroundMobile from "@assets/home/background-home-mobile.jpg";
 
 const Main = styled.main`
-  background-image: url(${background});
+  background-image: url(${backgroundDesktop});
   background-size: cover;
+  background-position: center;
   height: 633px;
   display: flex;
   align-items: center;
@@ -13,6 +16,12 @@ const Main = styled.main`
   transition: 1s ease-in-out;
 
   @media (max-width: 875px) {
+    background-image: url(${backgroundTablet});
+    min-height: 100vh;
+  }
+
+  @media (max-width: 475px){
+    background-image: url(${backgroundMobile});
     min-height: 100vh;
   }
 `;
@@ -31,6 +40,10 @@ const Hero = styled.article`
     justify-content: center;
     align-items: center;
     gap: 80px;
+  }
+
+  @media (max-width: 475px) {
+    gap: 40px;
   }
 `;
 
@@ -93,6 +106,27 @@ const Explore = styled.button`
       height: 300px;
       width: 300px;
     }
+  }
+
+  @media(max-width: 375px){
+    height: 150px;
+    width: 150px;
+
+    &:after{
+      top: 0px;
+      right: 0px;
+      height: 150px;
+      width: 150px;
+    }
+
+    &:hover:after{
+      top: -45px;
+      right: -50px;
+      height: 250px;
+      width: 250px;
+    }
+
+
   }
 `;
 

@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import background from "@assets/crew/background-crew-desktop.jpg";
+import backgroundDesktop from "@assets/crew/background-crew-desktop.jpg";
+import backgroundTablet from "@assets/crew/background-crew-tablet.jpg";
+import backgroundMobile from "@assets/crew/background-crew-mobile.jpg";
 
 const CrewMain = styled.main`
   height: 620px;
-  background-image: url(${background});
+  background-image: url(${backgroundDesktop});
   background-size: cover;
   color: #fff;
   display: flex;
@@ -13,6 +15,12 @@ const CrewMain = styled.main`
 
   @media (max-width: 875px) {
     min-height: 100vh;
+    background-image: url(${backgroundTablet});
+  }
+
+  @media (max-width: 475px) {
+    background-image: url(${backgroundMobile});
+    padding: 0 20px;
   }
 `;
 
@@ -34,6 +42,16 @@ const YourCrew = styled.h2`
     margin-top: 10px;
     margin-bottom: 50px;
   }
+
+  @media (max-width: 475px) {
+    font-size: 1.7rem;
+    margin: auto;
+  }
+
+  @media (max-height: 700px) {
+    margin-top: 230px; 
+    margin-bottom: 20px;
+  }
 `;
 
 const AboutUs = styled.section`
@@ -42,7 +60,7 @@ const AboutUs = styled.section`
   gap: 32px;
 
   @media (max-width: 875px) {
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
@@ -81,13 +99,44 @@ const About = styled.ul`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+
+    li:first-child {
+      font-size: 2rem;
+    }
+
+    li:last-child {
+      position: relative;
+      bottom: 0;
+      margin-top: 20px;
+    }
+
+    .description{
+      font-size: 1.4rem;
+      text-align: center;
+    }
   }
+
+  @media (max-width: 475px) {
+    width: 300px;
+
+    li{
+      width: 300px;
+    }
+  }
+
+  
 `;
 
 const MyName = styled.h1`
   font-size: 6rem;
   font-family: "Bellefair", sans serif;
   font-weight: 400;
+  text-transform: uppercase;
+
+  @media (max-width: 875px) {
+    font-size: 3rem;
+  }
 `;
 
 const Buttons = styled.button`
@@ -121,4 +170,4 @@ const MyPhoto = styled.img`
   -webkit-mask-size: cover;
 `;
 
-export { CrewMain , YourCrew , AboutUs , About , MyName , Buttons , MyPhoto };
+export { CrewMain, YourCrew, AboutUs, About, MyName, Buttons, MyPhoto };

@@ -12,9 +12,9 @@ const TechnologyMain = styled.main`
   flex-direction: column;
   padding: 0 50px;
 
-  @media (max-width: 875px) {
-    min-height: 100vh;
-    gap: 150px;
+  @media (max-width: 1094px) {
+    min-height: 1100px;
+    overflow-y: auto;
   }
 `;
 
@@ -41,10 +41,8 @@ const Sections = styled.section`
   justify-content: center;
   align-items: center;
   gap: 50px;
-  width: 800px;
-  height: 500px;
 
-  @media (max-width: 875px) {
+  @media (max-width: 1094px) {
     flex-direction: column-reverse;
     position: relative;
   }
@@ -71,15 +69,19 @@ const Numbers = styled.ol`
     color: #000;
   }
 
-  @media (max-width: 875px) {
+  @media (max-width: 1094px) {
     flex-direction: row;
     position: absolute;
-    top: -220px;
-    left: 33%;
+    top: -150px;
+    left: 23%;
 
     li {
       padding: 20px 30px;
     }
+  }
+
+  @media (max-width: 475px) {
+    left: 15%;
   }
 `;
 
@@ -111,6 +113,37 @@ const LauntchInfo = styled.ul`
 
   li:last-child {
     width: 500px;
+  }
+
+  @media (max-width: 1094px) {
+    text-align: center;
+
+    li:last-child {
+      padding-bottom: 30px;
+    }
+  }
+
+  @media (max-width: 475px) {
+    li:first-child {
+      font-size: 2rem;
+    }
+
+    li:last-child {
+      width: 400px;
+      font-size: 1.3rem;
+    }
+
+    li {
+      h1 {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  @media(max-width: 375px) {
+    li:last-child {
+      width: 300px;
+    }
   }
 `;
 

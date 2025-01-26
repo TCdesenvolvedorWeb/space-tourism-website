@@ -14,13 +14,17 @@ const CrewMain = styled.main`
   align-items: center;
 
   @media (max-width: 875px) {
-    min-height: 100vh;
+    min-height: 120vh;
     background-image: url(${backgroundTablet});
-  }
-
+    }
+    
   @media (max-width: 475px) {
     background-image: url(${backgroundMobile});
     padding: 0 20px;
+  }
+
+  @media (max-width: 375px) {
+    min-height: 1100px;
   }
 `;
 
@@ -42,15 +46,15 @@ const YourCrew = styled.h2`
     margin-bottom: 50px;
   }
 
+  @media (max-height: 700px) {
+    margin-top: 100px;
+  }
+
   @media (max-width: 475px) {
     font-size: 1.7rem;
     margin: auto;
   }
 
-  @media (max-height: 700px) {
-    margin-top: 230px; 
-    margin-bottom: 20px;
-  }
 `;
 
 const AboutUs = styled.section`

@@ -2,12 +2,15 @@ import styled from "styled-components";
 
 const HeaderPage = styled.header`
   position: absolute;
-  width: 100%;
   height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 1.5rem;
+
+  @media(min-width: 875px) {
+    min-width: 1365px;
+  }
 
   @media (max-width: 875px) {
     max-width: 875px;
@@ -15,6 +18,7 @@ const HeaderPage = styled.header`
   }
 
   @media (max-width: 812px) {
+    min-width: 100%;
     justify-content: space-between;
   }
 `;
